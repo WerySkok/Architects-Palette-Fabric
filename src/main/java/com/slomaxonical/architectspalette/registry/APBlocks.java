@@ -139,7 +139,7 @@ public class APBlocks implements BlockRegistryContainer {
     @ChangeGroup
     public static final Block NETHER_BRASS_CHAIN = new ChainBlock(FabricBlockSettings.copyOf(APBlockSettings.NETHER_BRASS).sounds(BlockSoundGroup.CHAIN));
     @ChangeGroup
-    public static final Block NETHER_BRASS_LANTERN = new LanternBlock(FabricBlockSettings.create().mapColor(MapColor.LIME).strength(4.0F, 10.0F).sounds(BlockSoundGroup.COPPER).requiresTool().luminance((a)->13));
+    public static final Block NETHER_BRASS_LANTERN = new LanternBlock(FabricBlockSettings.of(Material.METAL, MapColor.LIME).strength(4.0F, 10.0F).sounds(BlockSoundGroup.COPPER).requiresTool().luminance((a)->13));
     @NoBlockItem
     public static final Block NETHER_BRASS_TORCH = new TorchBlock(APBlockSettings.BRASS_TORCH, APParticles.GREEN_FLAME);
     @NoBlockItem
@@ -174,7 +174,7 @@ public class APBlocks implements BlockRegistryContainer {
     public static final Block SPOOL = new PillarBlock(FabricBlockSettings.copy(Blocks.WHITE_WOOL));
 
     // Scute Block
-    public static final Block SCUTE_BLOCK = new Block(FabricBlockSettings.create().mapColor(MapColor.LIME).strength(5.0F, 6.0F).sounds(BlockSoundGroup.BASALT));
+    public static final Block SCUTE_BLOCK = new Block(FabricBlockSettings.of(Material.STONE, MapColor.LIME).strength(5.0F, 6.0F).sounds(BlockSoundGroup.BASALT));
 
     // Polished Packed Ice
     @BlockSetBase(parts = {SLAB,VERTICAL_SLAB,STAIRS,WALL})

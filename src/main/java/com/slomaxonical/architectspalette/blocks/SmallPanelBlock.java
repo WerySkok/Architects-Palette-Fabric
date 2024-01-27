@@ -39,8 +39,12 @@ public class SmallPanelBlock extends Block implements Waterloggable {
     }
 
     public SmallPanelBlock(Settings settings) {
-        super(settings.pistonBehavior(PistonBehavior.DESTROY));
+        super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(WATERLOGGED,false));
+    }
+
+    public PistonBehavior getPistonBehavior(BlockState state) {
+        return PistonBehavior.DESTROY;
     }
 
     @Override

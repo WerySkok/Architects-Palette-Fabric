@@ -48,8 +48,12 @@ public class CageLanternBlock extends Block implements Waterloggable {
             .build();
 
     public CageLanternBlock(Settings properties, int poweredLightLevel) {
-        super(properties.luminance(getLightValueLit(poweredLightLevel)).pistonBehavior(PistonBehavior.DESTROY));
+        super(properties.luminance(getLightValueLit(poweredLightLevel)));
         this.setDefaultState(this.getDefaultState().with(FACING, Direction.NORTH).with(LIT, true).with(WATERLOGGED, false).with(INVERTED, false));
+    }
+
+    public PistonBehavior getPistonBehavior(BlockState state) {
+        return PistonBehavior.DESTROY;
     }
 
     private static ToIntFunction<BlockState> getLightValueLit(int lightValue) {
